@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CardioCare Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
+</head>
+<body>
+    <div class="banner">
+        <div class="navbar">
+            <img src="{{ url_for('static', filename='bg3.png') }}" class="logo" alt="Logo">
+            <ul>
+              <li><a href="{{ url_for('home') }}">Home</a></li>
+              <li><a href="{{ url_for('about') }}">About</a></li>
+              <li><a href="{{ url_for('prediction') }}">Prediction</a></li>
+              <li><a href="{{ url_for('result') }}">Result</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

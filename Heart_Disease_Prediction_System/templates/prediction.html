@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='prediction.css') }}">
+    <title>ECG Prediction Result</title>
+</head>
+<body class="prediction">
+    <div class="banner">
+        <div class="navbar">
+            <img src="{{ url_for('static', filename='bg3.png') }}" class="logo" alt="Logo">
+            <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+            <ul class="nav-list" id="navList">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('prediction') }}">Prediction</a></li>
+                <li><a href="{{ url_for('result') }}">Result</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <main>
+        <center>
+        <div class="container">
+            <form action="{{ url_for('prediction') }}" method="post" enctype="multipart/form-data" onsubmit="toggleNavbar()">
+                <div class="file-upload">
+                    <label for="my_image2">Upload ECG Image:</label>
+                    <input type="file" name="my_image2" id="file-input" accept=".jpg, .jpeg, .png" required>
+                    <label for="file-input" class="custom-file-upload">Choose File</label>
+                </div>
+                <button type="submit">Predict</button>
+            </form>
+            {% if img_path %}
+                <div class="uploaded-image">
+                    <br>
+                    <h3>User Uploaded Image:</h3>
+                    <br>
+                    <img src="{{ img_path }}" alt="Uploaded ECG Image">
+                </div>
+            {% endif %}
+        </div>
+    </center>
+        {% if prediction_result %}
+            <div class="container">
+                <h2>Prediction Result: <span>{{ prediction_result }}</span></h2>
+            
+                
+                {% if prediction_result == 'V' %}
+                    <div class="causes">
+                        <b><h3>Causes of Ventricular Ectopic Beats:</h3></b>
+                        <ul style="list-style-type:disc">
+                            <li>Caffeine</li>
+                            <li>Tobacco</li>
+                            <li>Alcohol</li>
+                            <li>Stress</li>
+                            <li>Fatigue</li>
+                        </ul>
+                    </div>
+                {% elif prediction_result == 'S' %}
+                    <div class="causes">
+                        <h3>Causes of Supraventricular Ectopic Beats:</h3>
+                    <ul style="list-style-type:disc">
+                            <li>Heart disease</li>
+                            <li>Heart failure</li>
+                            <li>Other heart conditions, such as Wolff-Parkinson-White syndrome</li>
+                            <li>Chronic lung disease</li>
+                            <li>A lot of caffeine</li>
+                            <li>Drinking too much alcohol</li>
+                            <li>Drug misuse, including cocaine and methamphetamine</li>
+                        </ul>
+                    </div>
+                {% elif prediction_result == 'F' %}
+                    <div class="causes">
+                        <b><h3>Causes of Fusion Beats:</h3></b>
+                        <p>It is a combination of supraventricular and ventricular beats.</p>
+                    </div>
+                {% elif prediction_result == 'Q' %}
+                    <div class="causes">
+                        <b><h3>Causes of Unknown Beats:</h3></b>
+                        <ul style="list-style-type: circle">
+                            <li>Artifacts: Electrode or lead placement issues, Patient movement during ECG recording, Poor skin-electrode contact.</li>
+                            <li>Signal Interference: Electrical interference from nearby electronic devices, Signal noise from environmental sources.</li>
+                            <li>Incomplete Recording: Brief episodes of poor ECG signal quality, Intermittent disruptions in the recording process.</li>
+                            <li>Ambiguous Patterns: Uncommon or rare arrhythmias not easily classified, Unique physiological variations that are not immediately recognizable.</li>
+                            <li>Technical Issues: Equipment malfunctions or calibration errors, Software or hardware issues in the ECG machine.</li>
+                            <li>Underlying Conditions: Complex arrhythmias that may require more specialized monitoring, Certain medical conditions affecting the heart's electrical conduction system.</li>
+                            <li>Patient Factors: Individual variability in heart rhythm that is not easily categorized, Variations in heart rate due to factors like age, fitness level, or medications.</li>
+                        </ul>
+                    </div>
+                {% elif prediction_result == 'N' %}
+                    <b><div class="causes"></b>
+                        <h3>Causes of Normal Beats:</h3>
+                        <p>The patient is healthy, and there is no need to worry.</p>
+                    </div>
+                {% endif %}
+            </div>
+        {% endif %}
+    </main>
+
+    
+  <script src="{{ url_for('static', filename='script.js') }}">
+    window.addEventListener("click", function (event) {
+        var modal = document.querySelector(".modal");
+        if (event.target === modal) {
+          toggleModal();
+        }
+      });
+      function toggleNavbar() {
+    document.body.classList.toggle('nav-visible');
+  }
+      </script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

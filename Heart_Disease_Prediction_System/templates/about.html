@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+    <title>About</title>
+</head>
+<body>
+    <div class="banner">
+        <div class="navbar">
+            <img src="{{ url_for('static', filename='bg3.png') }}" class="logo" alt="Logo">
+            <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+            <ul class="nav-list" id="navList">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('prediction') }}">Prediction</a></li>
+                <li><a href="{{ url_for('result') }}">Result</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <h1><span style="color: rgb(38, 186, 244);">Cardio</span><span style="color: orange;">Care</span> - ECG Prediction</h1>
+    <br>
+    <br>
+    <div>
+        <p>
+            Heart disease is a leading cause of mortality worldwide, necessitating timely and accurate detection to improve patient outcomes. In this study, we present a generalized approach to heart disease detection using deep learning, aiming to leverage advanced machine learning techniques for enhancing cardiovascular healthcare. 
+        </p>
+        <br>
+        <p>
+            Research delves into the application of deep learning algorithms to analyze diverse medical data, includes electrocardiograms images with the primary goal of developing precise and efficient methods for early detection and diagnosis of heart diseases. 
+        </p><br>
+        <p>
+            To achieve this objective, we investigate a wide range of deep learning architectures, encompassing convolutional neural networks (CNNs). These architectures are  meticulously evaluated and compared to identify the most suitable one for heart disease detection.
+        </p>  <br>  
+        <p> 
+            Our study employs a comprehensive dataset consisting of a diverse set of electrocardiograms images. The dataset's diversity enables the models to capture intricate patterns and achieve robust generalization, essential for real-world deployment.
+        </p><br>
+        <p>
+            Our experimental results demonstrate promising potential in improving heart disease diagnosis and risk assessment, showcasing significantly enhanced performance compared to conventional methods. Early detection of heart diseases contributes to better treatment planning and improves patient outcomes, underscoring the significance of our research. 
+        </p><br>
+        <p>
+            In conclusion, this study presents a comprehensive exploration of a generalized deep learning approach for heart disease detection. By combining diverse medical data, advanced deep learning architectures, and model training techniques, our research showcases the potential of artificial intelligence in revolutionizing cardiovascular healthcare. We anticipate that our findings will inspire future research and applications in the medical domain, leading to enhanced early diagnosis and improved patient care.
+        </p>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div class = "class_type">
+        <!-- Class 'N' (Normal) -->
+        <div class="class-container normal">
+            <img src="{{ url_for('static', filename='N.png') }}" alt="Normal Beat Image">
+            <p>'N' (Normal): This class likely represents normal heartbeats, serving as the baseline for comparison.</p>
+        </div>
+        <!-- Class 'U' (Unknown Beats) -->
+        <div class="class-container unknown">
+            <img src="{{ url_for('static', filename='U.png') }}" alt="Unknown Beat Image">
+            <p>'U' (Unknown Beats): This class may include heartbeats that are challenging to categorize or are of uncertain origin.</p>
+        </div>
+        
+        <!-- Class 'F' (Fusion Beats) -->
+        <div class="class-container fusion">
+            <img src="{{ url_for('static', filename='F.png') }}" alt="Fusion Beat Image">
+            <p>'F' (Fusion Beats): Fusion beats typically result from the combination of normal and abnormal electrical signals in the heart.</p>
+        </div>
+        
+        <!-- Class 'S' (Supraventricular Ectopic Beats) -->
+        <div class="class-container supraventricular">
+            <img src="{{ url_for('static', filename='S.png') }}" alt="Supraventricular Beat Image">
+            <p>'S' (Supraventricular Ectopic Beats): This class may include abnormal heartbeats originating above the heart's ventricles.</p>
+        </div>
+        
+        <!-- Class 'V' (Ventricular Ectopic Beats) -->
+        <div class="class-container ventricular">
+            <img src="{{ url_for('static', filename='V.png') }}" alt="Ventricular Beat Image">
+            <p>'V' (Ventricular Ectopic Beats): This class likely includes abnormal heartbeats originating in the ventricles of the heart.</p>
+        </div>
+    </div>
+</div>
+<br><br>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</body>
+</html>

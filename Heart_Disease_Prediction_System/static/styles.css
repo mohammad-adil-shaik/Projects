@@ -1,0 +1,185 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(bg.png);
+  background-size: cover;
+  background-position: center;
+}
+  .menu-toggle{
+    display: none;
+  }
+.navbar {
+  width: 85%;
+  margin: auto;
+  padding: 2% 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+.logo {
+  width: 80px;
+  cursor: pointer;
+}
+
+.navbar ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 20px;
+  position: relative;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.navbar ul li::after {
+  content: "";
+  height: 3px;
+  width: 0;
+  background: rgb(206, 8, 8);
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  transition: 0.5s;
+}
+
+.navbar ul li:hover::after {
+  width: 100%;
+}
+.btn ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 20px;
+  position: relative;
+}
+
+.btn ul li a {
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.btn ul li:hover::after {
+  width: 100%;
+  border: none;
+}
+.btn ul li::after {
+  content: "";
+  height: 3px;
+  width: 0;
+  background: rgb(206, 8, 8);
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  transition: 0.5s;
+}
+
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.content {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  color: #fff;
+}
+
+.content h1 {
+  font-size: 70px;
+  margin-top: 80px;
+}
+
+.content p {
+  margin: 20px auto;
+  font-weight: 100;
+  line-height: 25px;
+}
+
+footer {
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+
+.menu-btn {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+/* Your existing styles for larger screens */
+
+/* Add styles for mobile view and navigation */
+@media screen and (max-width: 768px) {
+  .navbar {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+  }
+
+  .logo {
+      margin: 20px;
+      width: 40px; /* Adjust the width as needed */
+      height: auto; /* Maintain aspect ratio */
+      align-items: center;
+  }
+
+  .menu-toggle {
+      display: block;
+      cursor: pointer;
+      font-size: 24px;
+      margin-right: 20px;
+      color: #fff; /* Set the color to white */
+  }
+
+  .nav-list {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      text-align: center;
+      position: absolute;
+      top: 60px; /* Adjust the distance from the top as needed */
+      left: 0;
+      background-color: #333; /* Adjust background color as needed */
+      z-index: 1;
+
+  }
+
+  .nav-list.active {
+      display: flex;
+  }
+
+  .nav-list li {
+      margin: 10px 0;
+      padding: 5px;
+  }
+}

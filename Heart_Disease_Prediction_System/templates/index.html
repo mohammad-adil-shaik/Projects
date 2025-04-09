@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <title>ECG Prediction Result</title>
+  </head>
+  <body>
+    <div class="banner">
+      <div class="navbar">
+        <img
+          src="{{ url_for('static', filename='bg3.png') }}"
+          class="logo"
+          alt="Logo"
+        />
+        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+        <ul class="nav-list" id="navList">
+          <li><a href="{{ url_for('home') }}">Home</a></li>
+          <li><a href="{{ url_for('about') }}">About</a></li>
+          <li><a href="{{ url_for('prediction') }}">Prediction</a></li>
+          <li><a href="{{ url_for('result') }}">Result</a></li>
+        </ul>
+      </div>
+    </div>
+    <main>
+      <div class="content">
+        <h1>ECG Prediction</h1>
+        <p>
+          Heart disease detection using ecg imaging data Model <br />
+          CNN type InceptionResnetv2 model
+        </p>
+        <br /><br />
+        <div class="btn">
+          <ul>
+            <li>
+              <h3>
+                <a href="{{ url_for('prediction') }}">Try Prediction Now</a>
+              </h3>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footer-content">
+        <p>&copy; <span id="year"></span> ECG Prediction App</p>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
