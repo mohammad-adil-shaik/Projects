@@ -1,5 +1,14 @@
 # 🌍 TradeSphere — Global Trade Analytics Dashboard
 
+![Python](https://img.shields.io/badge/Python-3.9-blue)
+![Streamlit](https://img.shields.io/badge/Streamlit-1.30%2B-brightgreen)
+![Pandas](https://img.shields.io/badge/Pandas-2.0%2B-blue)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-3.7%2B-orange)
+![Seaborn](https://img.shields.io/badge/Seaborn-0.12%2B-cyan)
+![Altair](https://img.shields.io/badge/Altair-5.0%2B-red)
+![Streamlit-Echarts](https://img.shields.io/badge/Streamlit--Echarts-0.4%2B-purple)
+![License](https://img.shields.io/badge/License-MIT-green)
+
 An interactive Streamlit dashboard to explore and analyze global import-export flows, commodity trends, and trade strengths across countries and years.
 
 ---
@@ -78,11 +87,3 @@ README.md          # Project overview
   - Animated year-wise trade evolution
 
 ---
-
-## 🔖 Badges (Optional)
-
-```markdown
-![Python](https://img.shields.io/badge/Python-3.9-blue)
-![Streamlit](https://img.shields.io/badge/Built%20With-Streamlit-red)
-![License](https://img.shields.io/badge/License-MIT-green)
-```
