@@ -1,0 +1,48 @@
+
+---
+
+# 📄 requirements.txt
+
+```txt
+streamlit
+pandas
+matplotlib
+seaborn
+altair
+streamlit-echarts
+```
+
+---
+
+# 📋 Explanation:
+| Package | Why you need it |
+|:---|:---|
+| `streamlit` | For building the dashboard app |
+| `pandas` | For loading and filtering the CSV data |
+| `matplotlib` | For creating plots (Pareto, Bubble, etc.) |
+| `seaborn` | For Heatmap, Pareto, and Bubble styling |
+| `altair` | For creating scatter and bar charts |
+| `streamlit-echarts` | For rendering advanced charts like pie, line, treemap |
+
+---
+
+
+```bash
+pip install -r requirements.txt
+```
+✅ and install all needed libraries automatically.
+
+---
+
+# 📢 Small Tip:
+If you want to **lock specific versions** (optional for production), you can do:
+
+```txt
+streamlit>=1.30
+pandas>=2.0
+matplotlib>=3.7
+seaborn>=0.12
+altair>=5.0
+streamlit-echarts>=0.4
+```
+
